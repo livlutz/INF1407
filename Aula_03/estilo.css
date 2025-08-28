@@ -1,0 +1,14 @@
+body {background-color: rgb(255, 0, 247)}
+p {margin-left: 20px}
+div {
+    font-size: small;
+    color: rgb(26, 255, 0);
+    text-align: center;
+}
+.Texto {
+    background-color: chocolate;
+}
+
+#logo-puc-rio{
+    width: 335px;
+}
