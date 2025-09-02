@@ -21,5 +21,6 @@ from MeuApp import views
 
 urlpatterns = [
     #path("admin/", admin.site.urls),
-    path('',views.home),
+    path('',views.home, name='homepage'),
+    path('segunda_pagina', views.segunda, name='segunda')
 ]
