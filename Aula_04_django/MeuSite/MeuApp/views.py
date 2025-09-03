@@ -9,11 +9,11 @@ def home(request):
 def stellar_evolution(request):
     return render(request, 'MeuApp/stellar_evolution.html')
 
-def solar_system(request):
-    return render(request, 'MeuApp/solar_system.html')
+def expansion(request):
+    return render(request, 'MeuApp/expansion.html')
 
-def galaxies(request):
-    return render(request, 'MeuApp/galaxies.html')
+def particles(request):
+    return render(request, 'MeuApp/particles.html')
 
 def space_missions(request):
     return render(request, 'MeuApp/space_missions.html')
