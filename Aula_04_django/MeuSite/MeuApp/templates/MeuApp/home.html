@@ -2,14 +2,111 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Home</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Astronomy ✨🧑‍🚀🌌</title>
+        <style>
+            body {
+                background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQPenDTcpA5d1CV8te6tVxky5o-HDG4LPdMw&s');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            .container {
+                max-width: 700px;
+                margin: 40px auto;
+                background: rgba(20, 20, 40, 0.8);
+                padding: 32px;
+                border-radius: 16px;
+                box-shadow: 0 0 24px #6600ffff;
+            }
+            h1 {
+                font-size: 2.5em;
+                margin-bottom: 0.2em;
+                text-align: center;
+            }
+            h2 {
+                font-size: 1.5em;
+                margin-bottom: 1em;
+                text-align: center;
+                color: #6600ffff;
+            }
+            .btn-group {
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                margin-top: 2em;
+                align-items: center;
+                width: 100%;
+            }
+            .astro-btn {
+                padding: 1em;
+                font-size: 1.1em;
+                background: #6600ffff;
+                color: #222;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                font-weight: bold;
+                transition: background 0.2s;
+                text-align: left;
+                width: 100%;
+                max-width: 350px;
+                margin: 0 auto;
+                display: block;
+            }
+            .astro-btn:hover {
+                background: #6600ffff;
+                color: #222;
+            }
+            .btn {
+                display: block;
+                margin: 2em auto 0 auto;
+                padding: 0.8em 2em;
+                font-size: 1em;
+                background: #6600ffff;
+                color: #222;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                font-weight: bold;
+                transition: background 0.2s;
+            }
+            .btn:hover {
+                background: #6600ffff;
+            }
+            .footer {
+                text-align: left;
+                font-size: 0.95em;
+            }
+        </style>
     </head>
     <body>
-        <h1>Home page</h1>
-        <h2>Meu primeiro site django</h2>
-        <!--'segunda é o nome do link'-->
-        <form action="{% url 'segunda' %}">
-            <input type="submit" value="Outra página..." />
-        </form>
+        <div class="container">
+            <h1>Astronomy & Astrophysics</h1>
+            <h2>Discover the wonders of the universe</h2>
+            <div class="btn-group">
+                <form action="{% url 'solar_system' %}">
+                    <button type="submit" class="astro-btn">
+                        <strong>The expansion</strong>
+                    </button>
+                </form>
+                <form action="{% url 'galaxies' %}">
+                    <button type="submit" class="astro-btn">
+                        <strong>Particles</strong>
+                    </button>
+                </form>
+                <form action="{% url 'stellar_evolution' %}">
+                    <button type="submit" class="astro-btn">
+                        <strong>Stellar evolution</strong>
+                    </button>
+                </form>
+            </div>
+            <form action="https://www.nasa.gov/">
+                <button type="submit" class="btn">Visit NASA for pics!</button>
+            </form>
+            <div class="footer">
+                <small>By @livlutz on github, 2025</small>
+            </div>
+        </div>
     </body>
 </html>

@@ -22,5 +22,7 @@ from MeuApp import views
 urlpatterns = [
     #path("admin/", admin.site.urls),
     path('',views.home, name='homepage'),
-    path('segunda_pagina', views.segunda, name='segunda')
+    path('stellar_evolution', views.stellar_evolution, name='stellar_evolution'),
+    path('solar_system', views.space_missions, name='solar_system'),
+    path('galaxies', views.galaxies, name='galaxies'),
 ]
