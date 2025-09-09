@@ -1,8 +1,16 @@
 from django.shortcuts import render
 from contatos.models import Pessoa
 from django.views.generic.base import View
+from contatos.forms import ContatoModel2Form
+from django.http.response import HttpResponseRedirect
+from django.urls.base import reverse_lazy
 
 # Create your views here.
+
+class ContatoCreateView(View):
+    def get(self, request, *args, **kwargs):
+        contexto = { 'formulario': ContatoModel2Form, }
+        return render(request, "contatos/cadastroContato.html", contexto)
 
 class ContatoListView(View):
     #argumento e dicionário de argumentos (args e kwargs)
@@ -16,3 +24,4 @@ class ContatoListView(View):
         contexto = {'pessoas': pessoas}
         #lê,modifica e retorna o arquivo html
         return render(request, 'contatos/listaContatos.html',contexto)
+

@@ -1,4 +1,4 @@
-{% load static %} #$ ou % é um comando de função do Django e 2 
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,16 +9,17 @@
 <body>
     {% include 'contatos/links.html' %}
     <h1>Lista de Contatos</h1>
-    <table>
+    <table border="1">
         <tr><th>Nome</th><th>Idade</th><th>Salário</th><th>Ações disponíveis</th></tr>
         {% for pessoa in pessoas %}
         <tr>
-            <td>{{ pessoa.nome }}</td><td>{{pessoa.idade }}</td><td>{{ pessoa.salario }}</td>
-            <td><a href="{% url 'contatos:atualiza-contato' pk=pessoa.id %}">Atualizar</a> |
-            <a href="{% url 'contatos:apaga-contato' pk=pessoa.id %}">Excluir</a></td>
+            <td> {{ pessoa.nome }} </td>
+            <td> {{pessoa.idade }} </td>
+            <td> ${{ pessoa.salario }} </td>
+            <td> Editar/ Excluir </td>
         </tr>
         {% empty %}
-            <tr><th colspan="5">Ainda não tem contatos cadastrados</th></tr>
+            <tr><th colspan="4">Ainda não tem contatos cadastrados</th></tr>
         {% endfor %}
     </table>
 </body>
