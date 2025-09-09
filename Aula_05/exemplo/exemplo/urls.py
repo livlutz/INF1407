@@ -20,6 +20,7 @@ from django.urls import path
 from django.urls.conf import include
 
 #separar as urls por aplicação -> colocando os links da aplicação
+#arquivo de rotas
 urlpatterns = [
     #admin é bom remover ou renomear
     path("admin/", admin.site.urls),
