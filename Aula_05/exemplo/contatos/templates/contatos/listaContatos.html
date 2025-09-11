@@ -17,10 +17,10 @@
             <td> {{ pessoa.nome }} </td>
             <td> {{pessoa.idade }} </td>
             <td> ${{ pessoa.salario }} </td>
-            <td> Editar/ Excluir </td>
+            <td> <a href = "{% url 'contatos:atualiza-contato' pk=pessoa.id %}"> Editar </a> | <a href="{% url 'contatos:apaga-contato' pk=pessoa.id %}">Excluir</a></td>  </td>
         </tr>
         {% empty %}
-            <tr><th colspan="4">Ainda não tem contatos cadastrados</th></tr>
+            <tr><th colspan="5">Ainda não tem contatos cadastrados</th></tr>
         {% endfor %}
     </table>
 </body>
