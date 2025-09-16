@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atualiza Contato</title>
+    <title>{{titulo_janela}}</title>
     {% include 'contatos/header.html'%}
     <link rel="stylesheet" href="{% static 'contatos/css/estilo.css' %}">
 </head>
@@ -12,14 +12,14 @@
     {% include 'contatos/header.html' %}
     {% include 'contatos/links.html' %}
 
-    <h1>Atualização de contatos</h1>
+    <h1> {{titulo_pagina}}</h1>
     <form method="POST" class='formulario'>
         {% csrf_token %}
         <table>
-            {{ pessoa.as_table }}
+            {{ form.as_table }}
             <tr>
                 <td></td>
-                <td><input type="submit" value="Atualiza"></td>
+                <td><input type="submit" value={{ botao }} class = "btn btn-primary"></td>
             </tr>
         </table>
     </form>

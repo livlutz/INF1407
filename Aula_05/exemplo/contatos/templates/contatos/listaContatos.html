@@ -3,21 +3,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Lista Contatos</title>
+<title>{{titulo_pagina}}</title>
 <link rel="stylesheet" href="{% static 'contatos/css/estilo.css' %}">
 </head>
 <body>
     {% include 'contatos/header.html' %}
     {% include 'contatos/links.html' %}
-    <h1>Lista de Contatos</h1>
+    <h1>{{titulo_janela}}</h1>
     <table border="1">
         <tr><th>Nome</th><th>Idade</th><th>Salário</th><th>Ações disponíveis</th></tr>
         {% for pessoa in pessoas %}
         <tr>
             <td> {{ pessoa.nome }} </td>
-            <td> {{pessoa.idade }} </td>
+            <td> {{ pessoa.idade }} </td>
             <td> ${{ pessoa.salario }} </td>
-            <td> <a href = "{% url 'contatos:atualiza-contato' pk=pessoa.id %}"> Editar </a> | <a href="{% url 'contatos:apaga-contato' pk=pessoa.id %}">Excluir</a></td>  </td>
+            <td> <a href = "{% url 'contatos:atualiza-contato' pk=pessoa.id %}" class = "btn btn-success" > Editar </a>
+                <a href="{% url 'contatos:apaga-contato' pk=pessoa.id %}" class = "btn btn-danger">Excluir</a>
+                <a href="{% url 'contatos:listar-endereco' pk=pessoa.id %}" class = "btn btn-primary">Enderecos</a>
+            </td>  </td>
         </tr>
         {% empty %}
             <tr><th colspan="5">Ainda não tem contatos cadastrados</th></tr>
