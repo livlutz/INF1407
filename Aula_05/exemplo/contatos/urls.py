@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from contatos import views
 
 app_name = 'contatos'
@@ -8,5 +8,6 @@ urlpatterns = [
     path('cria/',views.ContatoCreateView.as_view(), name='cria-contato' ),
     path('atualiza/<int:pk>/', views.ContatoUpdateView.as_view(), name='atualiza-contato'),
     path('apaga/<int:pk>/', views.ContatoDeleteView.as_view(), name='apaga-contato'),
-    path('listaEndereco/<int:pk>/', views.EnderecoListView.as_view(), name = 'listar-endereco')
+    path('listaEndereco/<int:pk>/', views.EnderecoListView.as_view(), name = 'listar-endereco'),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]

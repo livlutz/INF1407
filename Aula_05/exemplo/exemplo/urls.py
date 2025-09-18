@@ -18,11 +18,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
+from exemplo import views
 
 #separar as urls por aplicação -> colocando os links da aplicação
 #arquivo de rotas
 urlpatterns = [
     #admin é bom remover ou renomear
-    path("admin/", admin.site.urls),
+    path("admin/", admin.site.urls, name='admin'),
     path('contatos/', include('contatos.urls')),
+    path('', views.home, name='home'),
+    #link para a segurança
+    path('seguranca/', views.homeSec, name='sec-home'),
+    path('seguranca/registro/', views.registro, name='sec-registro'),
 ]
