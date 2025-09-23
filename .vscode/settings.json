@@ -1,4 +1,6 @@
 {
     "vscode-pets.theme": "winter",
-    "vscode-pets.throwBallWithMouse": true
+    "vscode-pets.throwBallWithMouse": true,
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "python-envs.pythonProjects": []
 }
