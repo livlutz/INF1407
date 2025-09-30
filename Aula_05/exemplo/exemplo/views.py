@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
+from .forms import ExemploForm
+from exemplo.forms import ExemploForm
 
 def home(request):
     """
@@ -9,6 +11,13 @@ def home(request):
     """
     return render(request,"exemplo/home.html")
 
+def exemplo_form(request):
+    if request.method == 'POST':
+        pass
+    else:
+        formulario = ExemploForm()
+        contexto = {'form': formulario, }
+    return render(request, "exemplo/exemplo_form.html", contexto)
 
 def homeSec(request):
     return render(request,"seguranca/homeSec.html")
