@@ -62,4 +62,5 @@ urlpatterns = [
                                                 success_url=reverse_lazy('sec-password-reset-complete'),), name='password_reset_confirm'),
     path('seguranca/password_reset_complete/', PasswordResetCompleteView.as_view(template_name='seguranca/password_reset_complete.html'), name='sec-password-reset-complete'),
     path("exemplos/", include('exemplos.urls')), #inclui as urls da aplicação exemplos
+    path("carros/", include('carros.urls')), #inclui as urls da aplicação carros
 ]

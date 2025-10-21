@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-)(t+s8-)yh9=lq@ayxaf6wq)v16p+lc4)hhtpn*^innwsc=)7+"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://localhost:8000', 'https://localhost:8000']
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'exemplos', #apenas um exemplo de backend
     'rest_framework',
     'corsheaders',
+    'carros',
 ]
 
 MIDDLEWARE = [
@@ -87,8 +88,27 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
+    "DBMTCars": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, 'mtcars.sqlite3'),
     }
 }
+
+DATABASE_ROUTERS = [
+    #carros: nome da aplicação (diretório)
+    #db_routers: nome do arquivo (sem .py)
+    #DBRouter: nome da classe
+    'carros.db_routers.DBRouter'
+]
+
+# Para permitir CORS
+CORS_ORIGIN_WHITELIST = [
+    'http://0.0.0.0:8080',
+    'http://127.0.0.1:8080',
+    'http://localhost:8080',
+    # Adicione outras origens permitidas, se necessário
+]
 
 
 # Password validation
