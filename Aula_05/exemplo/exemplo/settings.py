@@ -58,6 +58,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    #para usar o CORS
     "corsheaders.middleware.CorsMiddleware",
 ]
 
@@ -104,12 +105,9 @@ DATABASE_ROUTERS = [
 
 # Para permitir CORS
 CORS_ORIGIN_WHITELIST = [
-    'http://0.0.0.0:8080',
-    'http://127.0.0.1:8080',
-    'http://localhost:8080',
+    'https://cautious-enigma-76rxwrgqv5g3rr7v-8080.app.github.dev',
     # Adicione outras origens permitidas, se necessário
 ]
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
