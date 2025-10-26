@@ -28,9 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = [
-    'https://localhost:8000', 
-    'https://localhost:8000'
-    'https://crispy-space-broccoli-jrwrwprx9972q6g4-8080.app.github.dev',
+    'https://localhost:8000',
+    'https://localhost:8000',
+    'https://cautious-enigma-76rxwrgqv5g3rr7v-8080.app.github.dev',
 ]
 
 LOGIN_URL = 'sec-login'
@@ -109,7 +109,7 @@ DATABASE_ROUTERS = [
 
 # Para permitir CORS
 CORS_ORIGIN_WHITELIST = [
-    'https://crispy-space-broccoli-jrwrwprx9972q6g4-8080.app.github.dev',
+    'https://cautious-enigma-76rxwrgqv5g3rr7v-8080.app.github.dev',
     # Adicione outras origens permitidas, se necessário
 ]
 

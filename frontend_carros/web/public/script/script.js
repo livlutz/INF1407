@@ -3,11 +3,7 @@ onload = function () {
     exibeListaDeCarros();
 };
 function exibeListaDeCarros() {
-    fetch(backendAddress + "carros/lista/", {
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
+    fetch(backendAddress + "carros/lista/")
         .then(response => response.json())
         .then(carros => {
         let campos = ['name', 'mpg', 'cyl', 'disp', 'hp', 'wt', 'qsec', 'vs', 'am', 'gear'];
