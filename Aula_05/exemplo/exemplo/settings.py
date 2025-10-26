@@ -24,10 +24,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-)(t+s8-)yh9=lq@ayxaf6wq)v16p+lc4)hhtpn*^innwsc=)7+"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://localhost:8000', 'https://localhost:8000']
+CSRF_TRUSTED_ORIGINS = [
+    'https://localhost:8000', 
+    'https://localhost:8000'
+    'https://crispy-space-broccoli-jrwrwprx9972q6g4-8080.app.github.dev',
+]
 
 LOGIN_URL = 'sec-login'
 LOGOUT_URL = 'home'
@@ -51,6 +55,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -59,7 +64,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     #para usar o CORS
-    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = "exemplo.urls"
@@ -105,7 +109,7 @@ DATABASE_ROUTERS = [
 
 # Para permitir CORS
 CORS_ORIGIN_WHITELIST = [
-    'https://cautious-enigma-76rxwrgqv5g3rr7v-8080.app.github.dev',
+    'https://crispy-space-broccoli-jrwrwprx9972q6g4-8080.app.github.dev',
     # Adicione outras origens permitidas, se necessário
 ]
 
