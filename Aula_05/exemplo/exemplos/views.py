@@ -45,7 +45,7 @@ class ExemploClasse(APIView):
         )
 
 @api_view(('GET',)) #aqui tem que terminar com vírgula
-@renderer_classes(('JSONRenderer',))
+@renderer_classes((JSONRenderer,))
 def exemploGet(request):
     respostaJson = {
         "mensagem": "Olá, mundo!",

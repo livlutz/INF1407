@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'carros',
+    'drf_yasg',
+    'coreapi',
 ]
 
 MIDDLEWARE = [
@@ -112,6 +114,8 @@ CORS_ORIGIN_WHITELIST = [
     'https://cautious-enigma-76rxwrgqv5g3rr7v-8080.app.github.dev',
     # Adicione outras origens permitidas, se necessário
 ]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -186,6 +190,11 @@ How to get a Gmail App Password:
 """
 
 # Option 3: Console (current - prints to terminal)
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-DEFAULT_FROM_EMAIL = 'webmaster@localhost'
+#DEFAULT_FROM_EMAIL = 'webmaster@localhost'
+
+#CONFIGURAÇÕES PARA O SWAGGER
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+}

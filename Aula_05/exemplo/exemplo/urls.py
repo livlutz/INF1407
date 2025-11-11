@@ -24,6 +24,7 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import UpdateView
 from django.contrib.auth.models import User
 
+
 #separar as urls por aplicação -> colocando os links da aplicação
 #arquivo de rotas
 urlpatterns = [
