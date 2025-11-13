@@ -16,12 +16,14 @@ schema_view = yasg_schema_view(
     ),
     public=True,
     permission_classes=(permissions.AllowAny,),
+    url = 'https://cautious-enigma-76rxwrgqv5g3rr7v-8000.app.github.dev/carros/',
 )
 
 app_name = 'carros'
 
 urlpatterns = [
     path("lista/", views.CarsView.as_view(), name="lista-carros"),
+    path("umcarro/", views.CarView.as_view(), name="um-carro"),
 
     #URLs para o swagger
     path('docs/', include_docs_urls(title='Documentação da API Carros')),
