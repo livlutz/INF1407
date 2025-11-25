@@ -54,6 +54,8 @@ INSTALLED_APPS = [
     'carros',
     'drf_yasg',
     'coreapi',
+    'accounts',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -197,4 +199,7 @@ How to get a Gmail App Password:
 #CONFIGURAÇÕES PARA O SWAGGER
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
 }

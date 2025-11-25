@@ -2,21 +2,20 @@ from django.urls import path, include
 from carros import views
 from rest_framework import routers, permissions
 from rest_framework.documentation import include_docs_urls
-from rest_framework.schemas import get_schema_view
-from drf_yasg.views import get_schema_view as yasg_schema_view
+from rest_framework.schemas import get_schema_view as drf_get_schema_view
+from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
-schema_view = yasg_schema_view(
+schema_view = get_schema_view(
     openapi.Info(
-        title="API de Exemplo",
+        title="API de Carros",
         default_version='v1',
-        description="Descrição da API de exemplo",
+        description="Descrição da API de carros",
         contact=openapi.Contact(email="llutz@aluno.puc-rio.br"),
         license=openapi.License(name='BSD License'),
     ),
     public=True,
     permission_classes=(permissions.AllowAny,),
-    url = 'https://cautious-enigma-76rxwrgqv5g3rr7v-8000.app.github.dev/carros/',
 )
 
 app_name = 'carros'
@@ -29,6 +28,7 @@ urlpatterns = [
     #URLs para o swagger
     path('docs/', include_docs_urls(title='Documentação da API Carros')),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     path('api/v1/', include(routers.DefaultRouter().urls)),
-    path('openapi', get_schema_view(title="API para Carros", description="API para obter dados dos carros",), name='openapi-schema'),
+    path('openapi/', drf_get_schema_view(title="API para Carros", description="API para obter dados dos carros"), name='openapi-schema'),
 ]

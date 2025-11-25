@@ -23,7 +23,18 @@ from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView,
 from django.urls import reverse_lazy
 from django.views.generic.edit import UpdateView
 from django.contrib.auth.models import User
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
 
+schema_view = get_schema_view(
+   openapi.Info(
+      title="Your API",
+      default_version='v1',
+      description="API documentation",
+   ),
+   public=True,
+   url = "https://cautious-enigma-76rxwrgqv5g3rr7v-8080.app.github.dev/"
+)
 
 #separar as urls por aplicação -> colocando os links da aplicação
 #arquivo de rotas
@@ -64,4 +75,9 @@ urlpatterns = [
     path('seguranca/password_reset_complete/', PasswordResetCompleteView.as_view(template_name='seguranca/password_reset_complete.html'), name='sec-password-reset-complete'),
     path("exemplos/", include('exemplos.urls')), #inclui as urls da aplicação exemplos
     path("carros/", include('carros.urls')), #inclui as urls da aplicação carros
+    path("accounts/", include('accounts.urls')), #inclui as urls da aplicação accounts
+
+    # Swagger documentation at root level
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui-root'),
+    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc-root'),
 ]
